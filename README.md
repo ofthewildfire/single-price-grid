@@ -17,4 +17,4 @@ SASS!
 
 ## Links
 
-- Live link: https://single-price-grid-kc.vercel.app/
+- Live link: https://singlepricegrid-kc.vercel.app/
