@@ -1,0 +1,5 @@
+@mixin vertical-center-flex {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: column nowrap;
+}

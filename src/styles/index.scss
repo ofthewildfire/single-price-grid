@@ -1,0 +1,141 @@
+@use "./_partials/" as *;
+
+* {
+	// outline: 1px solid purple;
+}
+
+body {
+	background-color: $Light-Gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-height: auto;
+	min-height: 100vh;
+	margin: auto;
+}
+
+main {
+	display: grid;
+	font-family: $PrimaryFont;
+	width: 80%;
+	margin: 2em 0;
+	grid-template-rows: repeat(3, minmax(300px, auto));
+	line-height: 1.5;
+	box-shadow: 0px 0px 10px $Light-Gray;
+
+	& > .grid_item {
+		padding: 1em;
+		@include vertical-center-flex;
+		font-size: clamp(1rem, 0.8519rem + 0.7407vw, 1.5rem);
+
+		& > h2 {
+			font-family: $PrimaryFontBold;
+		}
+	}
+
+	& > .grid_item:nth-of-type(1) {
+		background-color: #fff;
+
+		h1 {
+			color: #25a09d;
+			font-size: $DefaultFontSize;
+			font-family: $PrimaryFontBold;
+			font-size: clamp(1.125rem, 0.7176rem + 2.037vw, 2.5rem);
+		}
+
+		.sub-heading {
+			color: #839922;
+			font-family: $PrimaryFontBold;
+			font-size: clamp(1.125rem, 0.8657rem + 1.2963vw, 2rem);
+		}
+
+		.information-paragraph {
+			display: flex;
+			color: #6d7788;
+			font-family: $PrimaryFont;
+		}
+	}
+
+	& > .grid_item:nth-of-type(2) {
+		background-color: $Cyan;
+		color: $Light-Gray;
+		justify-content: space-between;
+
+		.subscription_cost {
+			display: flex;
+			align-items: center;
+			font-family: $PrimaryFont;
+			font-size: clamp(0.75rem, 0.6759rem + 0.3704vw, 1rem);
+		}
+
+		.price {
+			font-family: $PrimaryFontBold;
+			font-size: clamp(2rem, 1.7037rem + 1.4815vw, 3rem);
+			margin: 0 0.2em 0 0;
+		}
+
+		.subscription_access {
+			font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
+		}
+
+		.sign-up-btn {
+			background-color: $Bright-Yellow;
+			border: transparent;
+			outline: transparent;
+			color: $Light-Gray;
+			padding: 1em;
+			border-radius: 5px;
+			font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
+			box-shadow: 0px 1px 5px #6d7788;
+
+			&:is(:focus, :active, :hover) {
+				cursor: pointer;
+			}
+		}
+	}
+
+	& > .grid_item:nth-of-type(3) {
+		background-color: $Lighter-Cyan;
+		color: $Light-Gray;
+		justify-content: space-between;
+
+		.why-us-list {
+			font-size: clamp(0.95rem, 0.9352rem + 0.0741vw, 1rem);
+			color: $Light-Gray;
+			opacity: 0.75;
+			// I think this is what is being done, its like slightly grey, so, opacity?
+		}
+	}
+}
+
+// Media Query for 1400px
+
+@media screen and (min-width: 900px) {
+	body {
+		display: flex;
+		max-width: 1440px;
+	}
+
+	main {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, minmax(300px, 1fr));
+		max-width: 850px;
+
+		& > .grid_item {
+			padding: 1em 2em;
+		}
+
+		& > .grid_item:nth-of-type(1) {
+			grid-column-start: 1;
+			grid-column-end: -1;
+		}
+
+		& > .grid_item:nth-of-type(2) {
+			grid-column: 1/3;
+		}
+
+		& > .grid_item:nth-of-type(3) {
+			grid-column: 3/-1;
+		}
+	}
+}
