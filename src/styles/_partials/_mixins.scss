@@ -3,3 +3,9 @@
 	justify-content: space-between;
 	flex-flow: column nowrap;
 }
+
+@mixin secondary-grid-flex {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: column nowrap;
+}

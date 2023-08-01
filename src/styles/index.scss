@@ -57,9 +57,9 @@ main {
 	}
 
 	& > .grid_item:nth-of-type(2) {
+		@include secondary-grid-flex;
 		background-color: $Cyan;
 		color: $Light-Gray;
-		justify-content: space-between;
 
 		.subscription_cost {
 			display: flex;
@@ -75,7 +75,8 @@ main {
 		}
 
 		.subscription_access {
-			font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
+			// font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
+			font-size: clamp(0.95rem, 0.9352rem + 0.0741vw, 1rem);
 		}
 
 		.sign-up-btn {
@@ -87,6 +88,8 @@ main {
 			border-radius: 5px;
 			font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
 			box-shadow: 0px 1px 5px #6d7788;
+			// To prevent the button from getting too close to the previous paragraph.
+			margin-top: 0.5em;
 
 			&:is(:focus, :active, :hover) {
 				cursor: pointer;
@@ -95,9 +98,9 @@ main {
 	}
 
 	& > .grid_item:nth-of-type(3) {
+		@include secondary-grid-flex;
 		background-color: $Lighter-Cyan;
 		color: $Light-Gray;
-		justify-content: space-between;
 
 		.why-us-list {
 			font-size: clamp(0.95rem, 0.9352rem + 0.0741vw, 1rem);
@@ -112,7 +115,6 @@ main {
 
 @media screen and (min-width: 900px) {
 	body {
-		display: flex;
 		max-width: 1440px;
 	}
 
